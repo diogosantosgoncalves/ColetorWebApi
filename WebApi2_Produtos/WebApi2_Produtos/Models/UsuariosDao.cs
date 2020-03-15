@@ -23,12 +23,13 @@ namespace WebApi2_Produtos.Models
                 sqlConnection.Open();
                 using(SqlCommand sqlCommand = new SqlCommand("Select * from Usuario where usu_nome = @nome and usu_senha = @senha", sqlConnection))
                 {
-                    sqlCommand.Parameters.AddWithValue("@nome", usuario.Id);
-                    sqlCommand.Parameters.AddWithValue("@senha", usuario.Id);
+                    sqlCommand.Parameters.AddWithValue("@nome", usuario.Nome);
+                    sqlCommand.Parameters.AddWithValue("@senha", usuario.Senha);
                     SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
                     if (sqlDataReader.Read() == true)
                     {
                         sqlCommand.Parameters.Clear();
+                        sqlConnection.Close();
                         return true;
 
                     }

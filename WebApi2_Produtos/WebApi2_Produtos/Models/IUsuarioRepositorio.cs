@@ -9,6 +9,6 @@ namespace WebApi2_Produtos.Models
     public interface IUsuarioRepositorio
     {
         bool Get(Usuario usuario);
-        void Update(int id);
+        bool Update(Usuario usuario);
     }
 }

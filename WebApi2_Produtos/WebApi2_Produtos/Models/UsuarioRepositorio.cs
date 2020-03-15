@@ -12,9 +12,17 @@ namespace WebApi2_Produtos.Models
            return UsuariosDao.BuscarUsuário(usuario);
            ///return usuario;
         }
-        public void Update(int id)
+        public bool Update(Usuario usuario)
         {
-            UsuariosDao.Ativa_Usuario(id);
+            if (UsuariosDao.BuscarUsuário(usuario) == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            //UsuariosDao.Ativa_Usuario(id);
         }
     }
 }

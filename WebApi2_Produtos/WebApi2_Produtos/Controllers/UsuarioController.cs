@@ -12,13 +12,21 @@ namespace WebApi2_Produtos.Controllers
     {
         static readonly IUsuarioRepositorio repositorio = new UsuarioRepositorio();
 
-        public void GetUsuario(Usuario usuario)
+        public void PostUsuario(Usuario usuario)
         {
             repositorio.Get(usuario);
         }
-        public void PutUsuario(int id)
+        public bool PutUsuario(Usuario usuario)
         {
-            repositorio.Update(id);
+            if (repositorio.Update(usuario) == true)
+            {
+                return true;
+            }
+            else
+            {
+                throw new HttpResponseException(HttpStatusCode.NotFound);
+                //return false;
+            }
         }
     }
 }
