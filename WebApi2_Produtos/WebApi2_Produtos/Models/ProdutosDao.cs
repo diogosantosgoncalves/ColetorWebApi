@@ -38,9 +38,13 @@ namespace WebApi2_Produtos.Models
                                 var produto = new Produto();
                                 produto.Id = int.Parse(sqlDataReader["prod_codigo"].ToString());
                                 produto.Nome = sqlDataReader["prod_nome"].ToString();
-                                produto.Quantidade = int.Parse(sqlDataReader["prod_quant"].ToString());
                                 produto.Setor = sqlDataReader["prod_setor"].ToString();
+                                produto.Quantidade = int.Parse(sqlDataReader["prod_quant"].ToString());
                                 produto.Inativo = sqlDataReader.GetBoolean(3);
+                                produto.setor_id = int.Parse(sqlDataReader["setor_id"].ToString());
+                                //produto.setor.setor_id = 1;
+                                //produto.setor.setor_id = int.Parse(sqlDataReader["setor_id"].ToString());
+                                //produto.setor.setor_id = int.Parse(sqlDataReader["prod_codigo"].ToString());
                                 lista_produtos.Add(produto);
                             }
                         }
@@ -78,6 +82,7 @@ namespace WebApi2_Produtos.Models
                     sqlCommand.Parameters.AddWithValue("@senha", setor);
                     sqlCommand.Parameters.AddWithValue("@inativo", pr_inativo);
                     sqlCommand.Parameters.AddWithValue("@quant", pr_quant);
+
                     SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
                     sqlCommand.Parameters.Clear();
                 }
@@ -104,7 +109,7 @@ namespace WebApi2_Produtos.Models
                             produto.Setor = sqlDataReader[2].ToString();
                             produto.Quantidade = int.Parse(sqlDataReader["prod_quant"].ToString());
                             produto.Inativo = sqlDataReader.GetBoolean(3);
-                            //produto.Inativo = sqlDataReader.GetBoolean(4);
+                            //produto.setor.setor_id = int.Parse(sqlDataReader["setor_id"].ToString());
 
                             return produto;
                             
