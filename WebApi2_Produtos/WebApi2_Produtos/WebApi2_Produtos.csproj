@@ -165,23 +165,28 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProdutosController.cs" />
+    <Compile Include="Controllers\SetorUsuarioController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Dal\SetorUsuarioDal.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ConexaoSQL.cs" />
     <Compile Include="Models\IProdutoRepositorio.cs" />
     <Compile Include="Models\ISetorRepositorio.cs" />
+    <Compile Include="Models\ISetorUsuarioRepositorio.cs" />
     <Compile Include="Models\IUsuarioRepositorio.cs" />
     <Compile Include="Models\Produto.cs" />
     <Compile Include="Models\ProdutoRepositorio.cs" />
-    <Compile Include="Models\ProdutosDao.cs" />
+    <Compile Include="Models\ProdutosDal.cs" />
     <Compile Include="Models\Setor.cs" />
-    <Compile Include="Models\SetorDao.cs" />
+    <Compile Include="Models\SetorDal.cs" />
     <Compile Include="Models\SetorRepositorio.cs" />
+    <Compile Include="Models\SetorUsuario.cs" />
+    <Compile Include="Models\SetorUsuarioRepositorio.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Models\UsuarioRepositorio.cs" />
-    <Compile Include="Models\UsuariosDao.cs" />
+    <Compile Include="Models\UsuariosDal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
