@@ -38,6 +38,10 @@ namespace WebApi2_Produtos.Dal
                                 //inventario.inv_dtabertura = sqlDataReader.GetDateTime(1);
                                 //inventario.inv_dtfechamento = sqlDataReader["inv_dtfechamento"].ToString().Length > 0 ? DateTime.Parse(sqlDataReader["inv_dtfechamento"].ToString()) : DateTime.MinValue;
                             }
+                            else
+                            {
+                                return 0;
+                            }
                         }
                         return codigo;
                     }
