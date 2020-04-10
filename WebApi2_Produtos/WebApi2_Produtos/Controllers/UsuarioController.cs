@@ -11,6 +11,17 @@ namespace WebApi2_Produtos.Controllers
     public class UsuarioController : ApiController
     {
         static readonly IUsuarioRepositorio repositorio = new UsuarioRepositorio();
+        public bool GetUsuarioLogin(String nome,String senha)
+        {
+            if(repositorio.GetLogin(nome,senha) == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         public void PostUsuario(Usuario usuario)
         {

@@ -24,5 +24,16 @@ namespace WebApi2_Produtos.Models
             }
             //UsuariosDao.Ativa_Usuario(id);
         }
+        public bool GetLogin(String nome, String senha)
+        {
+            if (UsuariosDao.BuscarLogin(nome,senha) == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 }

@@ -45,6 +45,35 @@ namespace WebApi2_Produtos.Models
 
             }
         }
+        public static bool BuscarLogin(String nome, String senha)
+        {
+            using (SqlConnection sqlConnection = new SqlConnection(GetStringConexao()))
+            {
+                sqlConnection.Open();
+                using (SqlCommand sqlCommand = new SqlCommand("Select * from Usuario where usu_nome = @nome and usu_senha = @senha", sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@nome", nome);
+                    sqlCommand.Parameters.AddWithValue("@senha", senha);
+                    SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                    if (sqlDataReader.Read() == true)
+                    {
+                        sqlCommand.Parameters.Clear();
+                        sqlConnection.Close();
+                        return true;
+
+                    }
+                    else
+                    {
+                        sqlCommand.Parameters.Clear();
+                        sqlConnection.Close();
+                        return false;
+
+                    }
+
+                }
+
+            }
+        }
 
         public static void Ativa_Usuario(int id)
         {

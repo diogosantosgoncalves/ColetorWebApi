@@ -10,5 +10,6 @@ namespace WebApi2_Produtos.Models
     {
         bool Get(Setor setor);
         bool Update(Setor setor);
+
     }
 }

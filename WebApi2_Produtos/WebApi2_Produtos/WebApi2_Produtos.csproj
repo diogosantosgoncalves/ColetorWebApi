@@ -164,18 +164,28 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InventarioController.cs" />
+    <Compile Include="Controllers\MovimentoProdutoController.cs" />
     <Compile Include="Controllers\ProdutosController.cs" />
     <Compile Include="Controllers\SetorUsuarioController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Dal\InventarioDal.cs" />
+    <Compile Include="Dal\MovimentoProdutoDal.cs" />
     <Compile Include="Dal\SetorUsuarioDal.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ConexaoSQL.cs" />
+    <Compile Include="Models\IInventarioRepositorio.cs" />
+    <Compile Include="Models\IMovimentoProdutoRepositorio.cs" />
+    <Compile Include="Models\Inventario.cs" />
+    <Compile Include="Models\InventarioRepositorio.cs" />
     <Compile Include="Models\IProdutoRepositorio.cs" />
     <Compile Include="Models\ISetorRepositorio.cs" />
     <Compile Include="Models\ISetorUsuarioRepositorio.cs" />
     <Compile Include="Models\IUsuarioRepositorio.cs" />
+    <Compile Include="Models\MovimentoProduto.cs" />
+    <Compile Include="Models\MovimentoProdutoRepositorio.cs" />
     <Compile Include="Models\Produto.cs" />
     <Compile Include="Models\ProdutoRepositorio.cs" />
     <Compile Include="Models\ProdutosDal.cs" />
